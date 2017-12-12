@@ -18,12 +18,35 @@ void LRenderer::AddToQueue(LGameObject* mObj)
 
 void LRenderer::RemoveFromQueue(LGameObject* mObj)
 {
+	if (!IsInQueue(mObj))
+	{
+		return;
+	}
+
+	int i = 0;
+	for (i; i < m_renderQueue.size(); ++i)
+	{
+		if (mObj == m_renderQueue.at(i))
+		{
+			break;
+		}
+	}
+
+	m_renderQueue.erase(m_renderQueue.begin() + i);
 
 }
 
 bool LRenderer::IsInQueue(LGameObject* mObj)
 {
-	return true;
+	for (auto& obj : m_renderQueue)
+	{
+		if (obj == mObj)
+		{
+			return true;
+		}
+	}
+
+	return false;
 }
 
 void LRenderer::ClearQueue()

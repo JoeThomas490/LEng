@@ -30,7 +30,7 @@
     <ClCompile Include="source\LState.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="TestState.cpp">
+    <ClCompile Include="source\TestState.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -50,7 +50,7 @@
     <ClInclude Include="include\LState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="TestState.h">
+    <ClInclude Include="include\TestState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

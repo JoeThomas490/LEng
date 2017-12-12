@@ -1,5 +1,6 @@
 #include "LApplication.h"
 #include "LRenderer.h"
+#include "LState.h"
 
 
 LApplication::LApplication()
@@ -20,14 +21,13 @@ void LApplication::InitApplication(const LApplicationInitData & data)
 void LApplication::RunApplication()
 {
 
-	LGameObject testObj;
-
-	testObj.setPosition(LengConstants::WINDOW_WIDTH / 2, LengConstants::WINDOW_HEIGHT / 2);
-	m_pRenderer->AddToQueue(&testObj);
-
-
 	Clock mClock;
 	mClock.restart();
+
+	TestState testState;
+
+	testState.InitState();
+	m_pCurrentState = &testState;
 
 	//Main game loop
 	while (m_pRenderWindow->isOpen())
@@ -45,11 +45,7 @@ void LApplication::RunApplication()
 			}
 		}
 
-		{
-			//m_pCurrentState->Update(0);
-			float speed = 100.0f;
-			testObj.setPosition(testObj.getPosition().x + (speed * m_dTime), testObj.getPosition().y);
-		}
+		m_pCurrentState->Update(m_dTime);
 
 		m_pRenderer->Render();
 	}

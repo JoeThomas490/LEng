@@ -4,12 +4,14 @@
 #include <SFML\Graphics.hpp>
 
 #include "constants.h"
-#include "LState.h"
+
+#include "TestState.h"
 
 using namespace sf;
 using namespace std;
 
 class LRenderer;
+class LState;
 
 struct LApplicationInitData
 {
@@ -54,6 +56,8 @@ private:
 
 	RenderWindow* m_pRenderWindow;
 	LRenderer* m_pRenderer;	
+
+	LState* m_pCurrentState;
 
 	float m_dTime;
 };

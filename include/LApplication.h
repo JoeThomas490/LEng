@@ -3,9 +3,9 @@
 
 #include <SFML\Graphics.hpp>
 
-#include "constants.h"
+#include "Utils\constants.h"
 
-#include "TestState.h"
+#include "States\TestState.h"
 
 using namespace sf;
 using namespace std;

@@ -2,10 +2,11 @@
 #define _TESTSTATE_H_
 
 #include "LState.h"
-#include "LGameObject.h"
 
 #include "LApplication.h"
-#include "LRenderer.h"
+
+#include "Rendering\LRenderer.h"
+#include "GameObject\LGameObject.h"
 
 class TestState : public LState
 {

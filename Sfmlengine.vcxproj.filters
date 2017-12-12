@@ -21,36 +21,36 @@
     <ClCompile Include="source\LApplication.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="source\LGameObject.cpp">
+    <ClCompile Include="source\GameObject\LGameObject.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="source\LRenderer.cpp">
+    <ClCompile Include="source\Rendering\LRenderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="source\LState.cpp">
+    <ClCompile Include="source\States\LState.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="source\TestState.cpp">
+    <ClCompile Include="source\States\TestState.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\constants.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="include\LApplication.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\LGameObject.h">
+    <ClInclude Include="include\States\LState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\LRenderer.h">
+    <ClInclude Include="include\States\TestState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\LState.h">
+    <ClInclude Include="include\Rendering\LRenderer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\TestState.h">
+    <ClInclude Include="include\GameObject\LGameObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Utils\constants.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

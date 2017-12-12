@@ -4,7 +4,7 @@
 #include <SFML\Graphics.hpp>
 #include <vector>
 
-#include "LGameObject.h"
+#include "GameObject\LGameObject.h"
 #include "LApplication.h"
 
 typedef std::vector<LGameObject*> RenderQueue;

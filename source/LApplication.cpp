@@ -1,6 +1,6 @@
 #include "LApplication.h"
-#include "LRenderer.h"
-#include "LState.h"
+#include "Rendering\LRenderer.h"
+#include "States\LState.h"
 
 
 LApplication::LApplication()

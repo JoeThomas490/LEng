@@ -21,8 +21,13 @@ void LApplication::RunApplication()
 {
 
 	LGameObject testObj;
+	LGameObject testObj2;
+
+	//yea this set position isn't working
+	testObj2.setPosition(300, 300);
 
 	m_pRenderer->AddToQueue(&testObj);
+	m_pRenderer->AddToQueue(&testObj2);
 
 
 	//Main game loop

@@ -15,6 +15,7 @@ void LGameObject::draw(sf::RenderTarget & renderTarget, sf::RenderStates renderS
 }
 
 
+
 LGameObject::~LGameObject()
 {
 	delete m_gameObject;

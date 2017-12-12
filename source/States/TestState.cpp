@@ -16,8 +16,11 @@ void TestState::InitState()
 
 void TestState::Update(float dTime)
 {
-	testObj->Update(dTime);
-	testObj->setPosition(testObj->getPosition().x + (50.0f * dTime), testObj->getPosition().y);
+	if (m_bStateInitialised)
+	{
+		testObj->Update(dTime);
+		testObj->setPosition(testObj->getPosition().x + (50.0f * dTime), testObj->getPosition().y);
+	}
 }
 
 void TestState::ShutdownState()

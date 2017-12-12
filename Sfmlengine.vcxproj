@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="source\Input\LInputManager.cpp" />
     <ClCompile Include="source\States\LState.cpp" />
     <ClCompile Include="source\Rendering\LRenderer.cpp" />
     <ClCompile Include="source\GameObject\LGameObject.cpp" />
@@ -33,6 +34,7 @@
     <ClInclude Include="include\Rendering\LRenderer.h" />
     <ClInclude Include="include\States\LState.h" />
     <ClInclude Include="include\States\TestState.h" />
+    <ClInclude Include="include\Input\LInputManager.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{26068E86-B443-47BE-831C-05BD4F5EE065}</ProjectGuid>

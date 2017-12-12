@@ -11,7 +11,6 @@ int main()
 
 	app->InitApplication(LApplicationInitData(LengConstants::WINDOW_WIDTH, LengConstants::WINDOW_HEIGHT, "Hello World!"));
 
-
 	app->RunApplication();
 
 	app->ClearApplication();

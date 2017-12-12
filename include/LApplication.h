@@ -4,6 +4,7 @@
 #include <SFML\Graphics.hpp>
 
 #include "constants.h"
+#include "LState.h"
 
 using namespace sf;
 using namespace std;
@@ -44,15 +45,17 @@ public:
 
 	void ClearApplication();
 
-	RenderWindow* GetWindowInstance();
+	RenderWindow* GetRenderWindow();
+	LRenderer* GetRenderer();
 
 private:
 
 	LApplication();
 
 	RenderWindow* m_pRenderWindow;
-	LRenderer* m_pRenderer;
-	
+	LRenderer* m_pRenderer;	
+
+	float m_dTime;
 };
 
 #endif

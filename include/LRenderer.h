@@ -24,7 +24,6 @@ public:
 private :
 
 	bool IsInQueue(LGameObject* mObj);
-
 	void ClearQueue();
 
 private:

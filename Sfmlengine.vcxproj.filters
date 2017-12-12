@@ -27,6 +27,12 @@
     <ClCompile Include="source\LRenderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="source\LState.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TestState.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\constants.h">
@@ -39,6 +45,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\LRenderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\LState.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TestState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -56,7 +56,7 @@ void LRenderer::ClearQueue()
 
 void LRenderer::Render()
 {
-	RenderWindow* const target = LApplication::GetApplicationInstance()->GetWindowInstance();
+	RenderWindow* const target = LApplication::GetApplicationInstance()->GetRenderWindow();
 
 	target->clear();
 

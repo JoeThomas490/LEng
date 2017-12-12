@@ -21,18 +21,20 @@ void LApplication::RunApplication()
 {
 
 	LGameObject testObj;
-	LGameObject testObj2;
 
-	//yea this set position isn't working
-	testObj2.setPosition(300, 300);
-
+	testObj.setPosition(LengConstants::WINDOW_WIDTH / 2, LengConstants::WINDOW_HEIGHT / 2);
 	m_pRenderer->AddToQueue(&testObj);
-	m_pRenderer->AddToQueue(&testObj2);
 
+
+	Clock mClock;
+	mClock.restart();
 
 	//Main game loop
 	while (m_pRenderWindow->isOpen())
 	{
+
+		m_dTime = mClock.restart().asSeconds();
+
 		//Poll events
 		Event evt;
 		while (m_pRenderWindow->pollEvent(evt))
@@ -43,8 +45,13 @@ void LApplication::RunApplication()
 			}
 		}
 
-		m_pRenderer->Render();
+		{
+			//m_pCurrentState->Update(0);
+			float speed = 100.0f;
+			testObj.setPosition(testObj.getPosition().x + (speed * m_dTime), testObj.getPosition().y);
+		}
 
+		m_pRenderer->Render();
 	}
 }
 
@@ -57,7 +64,12 @@ void LApplication::ClearApplication()
 	m_pRenderWindow = nullptr;
 }
 
-RenderWindow * LApplication::GetWindowInstance()
+RenderWindow * LApplication::GetRenderWindow()
 {
 	return m_pRenderWindow;
+}
+
+LRenderer * LApplication::GetRenderer()
+{
+	return m_pRenderer;
 }

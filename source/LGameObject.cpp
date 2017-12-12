@@ -11,7 +11,11 @@ void LGameObject::draw(sf::RenderTarget & renderTarget, sf::RenderStates renderS
 	//renderStates.texture = mp_texture;
 	renderStates.transform *= getTransform();
 
-	renderTarget.draw(*m_gameObject);
+	renderTarget.draw(*m_gameObject, renderStates);
+}
+
+void LGameObject::Update(float dTime)
+{
 }
 
 

@@ -19,12 +19,16 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="source\LRenderer.cpp" />
+    <ClCompile Include="source\LGameObject.cpp" />
     <ClCompile Include="source\LApplication.cpp" />
     <ClCompile Include="source\Main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\constants.h" />
     <ClInclude Include="include\LApplication.h" />
+    <ClInclude Include="include\LGameObject.h" />
+    <ClInclude Include="include\LRenderer.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{26068E86-B443-47BE-831C-05BD4F5EE065}</ProjectGuid>

@@ -2,6 +2,8 @@
 #define _LAPPLICATION_H_
 
 #include <SFML\Graphics.hpp>
+#include <SFML\Window.hpp>
+#include <SFML\System.hpp>
 
 #include "Utils\constants.h"
 

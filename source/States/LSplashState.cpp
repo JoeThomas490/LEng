@@ -13,13 +13,15 @@ LSplashState::~LSplashState()
 }
 void LSplashState::InitState()
 {
+	m_fDeathTime = LengConstants::SPLASH_TIME;
+
 	if (!m_fontSplash.loadFromFile("res/fonts/data-control.ttf"))
 	{
-		printf("\n Font can't be loaded");
+		printf("\nFont can't be loaded");
 	}
 
 	m_txtSplash.setFont(m_fontSplash);
-	m_txtSplash.setString(L"LEng");
+	m_txtSplash.setString(LSTRING("LEng"));
 	m_txtSplash.setCharacterSize(38);
 
 	m_txtSplash.setColor(Color::White);

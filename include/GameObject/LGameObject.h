@@ -24,6 +24,7 @@ public:
 	virtual void Update(float dTime);
 
 	void SetSize(const Vector2f& mSize);
+	Vector2f GetSize() { return m_v2Size; };
 
 	bool GetIsActive() { return m_bIsActive; };
 	void SetIsActive(bool mIsActive) { m_bIsActive = mIsActive; };

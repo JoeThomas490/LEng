@@ -5,14 +5,14 @@
 
 LApplication::LApplication()
 {
-	printf("%s", "Engine running... \n");
+	printf("%s", "\nEngine running... \n");
 	printf("%s", "******************\n");
 }
 
 
 LApplication::~LApplication()
 {
-	printf("%s", "Engine stopping... \n");
+	printf("%s", "\nEngine stopping... \n");
 	printf("%s", "******************\n");
 }
 
@@ -34,8 +34,11 @@ void LApplication::RunApplication()
 
 	LSplashState* splashState = new LSplashState();
 
+	LInvadersGameState* invadersGameState = new LInvadersGameState();
+
 	AddState(splashState);
 	AddState(testState);
+	AddState(invadersGameState);
 
 	ChangeState(splashState);
 
@@ -61,16 +64,11 @@ void LApplication::RunApplication()
 			}
 		}
 
-		if (LInputManager::IsKeyPressed(Keyboard::Key::C))
-		{
-			ChangeState(testState->GetStateNumber());
-		}
-
 		m_pCurrentState->Update(m_dTime);
 
 		if (m_pCurrentState->GetIsStateFinished())
 		{
-			ChangeState(m_pCurrentState->GetStateNumber() + 1);
+			ChangeState(invadersGameState);
 		}
 
 		m_pRenderer->Render();

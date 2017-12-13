@@ -11,8 +11,9 @@ public:
 
 	virtual void InitState() = 0;
 	virtual void Update(float dTime) = 0;
-	virtual void FinishState();
 	virtual void ShutdownState() = 0;
+
+	virtual void FinishState();
 	
 	void SetStateNumber(int mStateNum) { m_iStateNumber = mStateNum; };
 	int GetStateNumber() { return m_iStateNumber; };

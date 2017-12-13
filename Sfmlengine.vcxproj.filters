@@ -39,6 +39,9 @@
     <ClCompile Include="source\States\LSplashState.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="source\Invaders\LInvadersGameState.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\LApplication.h">
@@ -69,6 +72,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\Utils\LMathsUtils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Invaders\LInvadersGameState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

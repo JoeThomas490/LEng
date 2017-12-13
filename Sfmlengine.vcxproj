@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="source\Invaders\LInvadersGameState.cpp" />
     <ClCompile Include="source\States\LSplashState.cpp" />
     <ClCompile Include="source\Input\LInputManager.cpp" />
     <ClCompile Include="source\Main.cpp" />
@@ -39,6 +40,7 @@
     <ClInclude Include="include\Utils\LMacros.h" />
     <ClInclude Include="include\States\LSplashState.h" />
     <ClInclude Include="include\Utils\LMathsUtils.h" />
+    <ClInclude Include="include\Invaders\LInvadersGameState.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{26068E86-B443-47BE-831C-05BD4F5EE065}</ProjectGuid>

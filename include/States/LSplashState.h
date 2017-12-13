@@ -27,7 +27,7 @@ private:
 
 	void UpdateSplashText(float dTime);
 
-	float m_fDeathTime = 3.0f;
+	float m_fDeathTime = 1.0f;
 	float m_fAliveTime = 0.0f;
 
 	Font m_fontSplash;

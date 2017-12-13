@@ -37,12 +37,19 @@ void TestState::Update(float dTime)
 			m_iObjCounter++;
 			m_iObjCounter %= m_iMaxObjects;
 		}
-		if (LInputManager::IsMouseButtonReleased(Mouse::Button::Left))
-		{
-		}
 
-		if (LInputManager::IsMouseButtonHeld(Mouse::Button::Left))
+
+		if (LInputManager::IsKeyPressed(Keyboard::Key::A))
 		{
+			printf("\n 'A' Key pressed!");
+		}
+		if (LInputManager::IsKeyReleased(Keyboard::Key::A))
+		{
+			printf("\n 'A' Key released!");
+		}
+		if (LInputManager::IsKeyHeld(Keyboard::Key::A) && LInputManager::IsKeyHeld(Keyboard::Key::P	))
+		{
+			printf("\n 'A' & 'P' Keys held!");
 		}
 	}
 }

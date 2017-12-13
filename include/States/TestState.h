@@ -25,7 +25,7 @@ private:
 	LGameObject* testObjs;
 
 	int m_iObjCounter;
-	int m_iMaxObjects = 3;
+	int m_iMaxObjects = 2;
 
 
 };

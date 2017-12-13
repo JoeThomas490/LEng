@@ -26,8 +26,11 @@ void TestState::Update(float dTime)
 {
 	if (m_bStateInitialised)
 	{
-		//testObj->Update(dTime);
-		//testObj->setPosition(testObj->getPosition().x + (50.0f * dTime), testObj->getPosition().y);
+
+		for (int i = 0; i < m_iMaxObjects; i++)
+		{
+			testObjs[i].Update(dTime);
+		}
 
 		if (LInputManager::IsMouseButtonPressed(Mouse::Button::Left))
 		{
@@ -36,6 +39,20 @@ void TestState::Update(float dTime)
 			testObjs[m_iObjCounter].SetIsActive(true);
 			m_iObjCounter++;
 			m_iObjCounter %= m_iMaxObjects;
+		}
+
+		for (int i = 0; i < m_iMaxObjects; i++)
+		{
+			for (int j = 0; j < m_iMaxObjects; j++)
+			{
+				LGameObject* obj1 = &testObjs[i];
+				LGameObject* obj2 = &testObjs[j];
+
+				if (LGameObject::IsCollisionBetween(obj1, obj2))
+				{
+					printf("\n Collision!");
+				}
+			}
 		}
 
 

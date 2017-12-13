@@ -28,7 +28,9 @@ public:
 	bool GetIsActive() { return m_bIsActive; };
 	void SetIsActive(bool mIsActive) { m_bIsActive = mIsActive; };
 
-	FloatRect GetGlobalBounds() const { return m_frGlobalBounds; };
+	FloatRect GetGlobalBounds() { UpdateGlobalBounds(); return m_frGlobalBounds; };
+
+	static bool IsCollisionBetween(LGameObject* obj1, LGameObject* obj2);
 
 private:
 	void InitVertexArray(LPrimitive mPrimitiveType, const Vector2f& mPos, const Vector2f& mSize);
@@ -45,7 +47,6 @@ private:
 	bool m_bIsActive = false;
 
 	Vector2f m_v2Size;
-
 };
 
 #endif

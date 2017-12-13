@@ -27,14 +27,29 @@ void LGameObject::draw(sf::RenderTarget & renderTarget, sf::RenderStates renderS
 
 void LGameObject::Update(float dTime)
 {
-	UpdateGlobalBounds();
-
+	//UpdateGlobalBounds();
 }
 
 void LGameObject::SetSize(const Vector2f& mSize)
 {
 	InitVertexArray(LPrimitive::LSQUARE, getPosition(), mSize);
 	m_v2Size = mSize;
+}
+
+bool LGameObject::IsCollisionBetween(LGameObject * obj1, LGameObject * obj2)
+{
+	if (obj1->GetIsActive() && obj2->GetIsActive())
+	{
+		if (obj1 != obj2)
+		{
+			if (obj1->GetGlobalBounds().intersects(obj2->GetGlobalBounds()))
+			{
+				return true;
+			}
+		}
+	}
+
+	return false;
 }
 
 void LGameObject::InitVertexArray(LPrimitive mPrimitiveType, const Vector2f& mPos, const Vector2f& mSize)

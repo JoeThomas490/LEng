@@ -18,6 +18,7 @@ public:
 	static void Update();
 
 	static bool IsMouseButtonPressed(Mouse::Button mBtn);
+	static bool IsMouseButtonHeld(Mouse::Button mBtn);
 	static bool IsMouseButtonReleased(Mouse::Button mBtn);
 
 private:
@@ -30,6 +31,7 @@ private:
 
 	static LMouseEventQueue m_vMousePressedEvents;
 	static LMouseEventQueue m_vMouseReleasedEvents;
+	static LMouseEventQueue m_vMouseHeldEvents;
 };
 
 #endif

@@ -29,6 +29,11 @@ void TestState::Update(float dTime)
 		{
 			printf("\nLeft mouse btn released!");
 		}
+
+		if (LInputManager::IsMouseButtonHeld(Mouse::Button::Left))
+		{
+			printf("\nLeft mouse btn held!");
+		}
 	}
 }
 

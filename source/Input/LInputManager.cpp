@@ -2,6 +2,7 @@
 
 LInputManager::LMouseEventQueue LInputManager::m_vMousePressedEvents;
 LInputManager::LMouseEventQueue LInputManager::m_vMouseReleasedEvents;
+LInputManager::LMouseEventQueue LInputManager::m_vMouseHeldEvents;
 
 void LInputManager::HandleEvents(Event evt)
 {
@@ -28,6 +29,11 @@ bool LInputManager::IsMouseButtonPressed(Mouse::Button mBtn)
 	return (m_vMousePressedEvents.find(mBtn) != m_vMousePressedEvents.end());
 }
 
+bool LInputManager::IsMouseButtonHeld(Mouse::Button mBtn)
+{
+	return (m_vMouseHeldEvents.find(mBtn) != m_vMouseHeldEvents.end());
+}
+
 bool LInputManager::IsMouseButtonReleased(Mouse::Button mBtn)
 {
 	return (m_vMouseReleasedEvents.find(mBtn) != m_vMouseReleasedEvents.end());
@@ -36,14 +42,21 @@ bool LInputManager::IsMouseButtonReleased(Mouse::Button mBtn)
 void LInputManager::HandleMousePressed(Event evt)
 {
 	m_vMousePressedEvents.insert(evt.mouseButton.button);
+	m_vMouseHeldEvents.insert(evt.mouseButton.button);
 }
 
 void LInputManager::HandleMouseReleased(Event evt)
 {
-	auto mouseBtn = m_vMousePressedEvents.find(evt.mouseButton.button);
-	if (mouseBtn != m_vMousePressedEvents.end())
+	auto mousePressedBtn = m_vMousePressedEvents.find(evt.mouseButton.button);
+	if (mousePressedBtn != m_vMousePressedEvents.end())
 	{
-		m_vMousePressedEvents.erase(mouseBtn);
+		m_vMousePressedEvents.erase(mousePressedBtn);
+	}
+
+	auto mouseHeldBtn = m_vMouseHeldEvents.find(evt.mouseButton.button);
+	if (mouseHeldBtn != m_vMouseHeldEvents.end())
+	{
+		m_vMouseHeldEvents.erase(mouseHeldBtn);
 	}
 
 	m_vMouseReleasedEvents.insert(evt.mouseButton.button);

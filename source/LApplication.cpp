@@ -32,12 +32,12 @@ void LApplication::RunApplication()
 
 	TestState* testState = new TestState();
 
-	TestState* testState2 = new TestState();
+	LSplashState* splashState = new LSplashState();
 
+	AddState(splashState);
 	AddState(testState);
-	AddState(testState2);
 
-	ChangeState(testState);
+	ChangeState(splashState);
 
 	//Main game loop
 	while (m_pRenderWindow->isOpen())
@@ -58,23 +58,28 @@ void LApplication::RunApplication()
 			else
 			{
 				LInputManager::HandleEvents(evt);
-
-				if (LInputManager::IsKeyPressed(Keyboard::Key::C))
-				{
-					ChangeState(testState2->GetStateNumber());
-				}
 			}
 		}
 
+		if (LInputManager::IsKeyPressed(Keyboard::Key::C))
+		{
+			ChangeState(testState->GetStateNumber());
+		}
+
 		m_pCurrentState->Update(m_dTime);
+
+		if (m_pCurrentState->GetIsStateFinished())
+		{
+			ChangeState(m_pCurrentState->GetStateNumber() + 1);
+		}
 
 		m_pRenderer->Render();
 	}
 
 	delete testState;
 	testState = nullptr;
-	delete testState2;
-	testState = nullptr;
+	delete splashState;
+	splashState = nullptr;
 }
 
 void LApplication::AddState(LState* mState)
@@ -85,11 +90,12 @@ void LApplication::AddState(LState* mState)
 
 void LApplication::ChangeState(LState* mState)
 {
+	printf("\nChanging to State No. %i", mState->GetStateNumber());
+
 	if (m_pCurrentState == nullptr)
 	{
 		m_pCurrentState = mState;
 		m_pCurrentState->InitState();
-		return;
 	}
 	else
 	{
@@ -98,6 +104,7 @@ void LApplication::ChangeState(LState* mState)
 		m_pCurrentState->InitState();
 	}
 
+
 	//TODO Add Initialise checks to states and report an error if init fails
 }
 
@@ -105,9 +112,22 @@ void LApplication::ChangeState(int mStateIndex)
 {
 	if (mStateIndex > 0 && mStateIndex < m_vStateList.size())
 	{
-		m_pCurrentState->ShutdownState();
-		m_pCurrentState = m_vStateList[mStateIndex];
-		m_pCurrentState->InitState();
+		printf("\nChanging to State No. %i", mStateIndex);
+
+		if (m_pCurrentState == nullptr)
+		{
+			m_pCurrentState = m_vStateList[mStateIndex];
+			m_pCurrentState->InitState();
+		}
+		else
+		{
+			m_pCurrentState->ShutdownState();
+			m_pCurrentState = m_vStateList[mStateIndex];
+			m_pCurrentState->InitState();
+		}
+
+
+		//TODO Add Initialise checks to states and report an error if init fails
 	}
 }
 

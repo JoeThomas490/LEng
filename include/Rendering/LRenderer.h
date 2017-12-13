@@ -7,27 +7,26 @@
 #include "GameObject\LGameObject.h"
 #include "LApplication.h"
 
-typedef std::vector<LGameObject*> RenderQueue;
-
 class LRenderer
 {
 public:
 	LRenderer();
 	~LRenderer();
 
-	void AddToQueue(LGameObject* mObj);
-	void RemoveFromQueue(LGameObject* mObj);
+	void AddToQueue(Drawable* mObj);
+	void RemoveFromQueue(Drawable* mObj);
 
 	void Render();
 
 
 private :
 
-	bool IsInQueue(LGameObject* mObj);
+	bool IsInQueue(Drawable* mObj);
 	void ClearQueue();
 
 private:
 
+	typedef std::vector<Drawable*> RenderQueue;
 	RenderQueue m_renderQueue;
 
 };

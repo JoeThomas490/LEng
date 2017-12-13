@@ -11,12 +11,12 @@ LRenderer::~LRenderer()
 	ClearQueue();
 }
 
-void LRenderer::AddToQueue(LGameObject* mObj)
+void LRenderer::AddToQueue(Drawable* mObj)
 {
 	m_renderQueue.push_back(mObj);
 }
 
-void LRenderer::RemoveFromQueue(LGameObject* mObj)
+void LRenderer::RemoveFromQueue(Drawable* mObj)
 {
 	if (!IsInQueue(mObj))
 	{
@@ -36,7 +36,7 @@ void LRenderer::RemoveFromQueue(LGameObject* mObj)
 
 }
 
-bool LRenderer::IsInQueue(LGameObject* mObj)
+bool LRenderer::IsInQueue(Drawable* mObj)
 {
 	for (auto& obj : m_renderQueue)
 	{

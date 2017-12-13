@@ -9,6 +9,7 @@
 #include "Input\LInputManager.h"
 
 #include "States\TestState.h"
+#include "States\LSplashState.h"
 
 using namespace sf;
 using namespace std;

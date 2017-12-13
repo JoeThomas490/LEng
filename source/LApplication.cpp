@@ -20,6 +20,8 @@ void LApplication::InitApplication(const LApplicationInitData & data)
 {
 	m_pRenderWindow = new RenderWindow(VideoMode(data.windowWidth, data.windowHeight), data.appName);
 	m_pRenderer = new LRenderer();
+
+	LInputManager::SetWindow(m_pRenderWindow);
 }
 
 void LApplication::RunApplication()

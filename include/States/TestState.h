@@ -22,7 +22,10 @@ public:
 	virtual ~TestState();
 private:
 
-	LGameObject* testObj;
+	LGameObject* testObjs;
+
+	int m_iObjCounter;
+	int m_iMaxObjects = 3;
 
 
 };

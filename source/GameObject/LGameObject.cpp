@@ -31,6 +31,12 @@ void LGameObject::Update(float dTime)
 
 }
 
+void LGameObject::SetSize(const Vector2f& mSize)
+{
+	InitVertexArray(LPrimitive::LSQUARE, getPosition(), mSize);
+	m_v2Size = mSize;
+}
+
 void LGameObject::InitVertexArray(LPrimitive mPrimitiveType, const Vector2f& mPos, const Vector2f& mSize)
 {
 	switch (mPrimitiveType)

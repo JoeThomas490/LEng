@@ -23,6 +23,8 @@ public:
 	void draw(RenderTarget& rTarget, RenderStates rStates) const;
 	virtual void Update(float dTime);
 
+	void SetSize(const Vector2f& mSize);
+
 	bool GetIsActive() { return m_bIsActive; };
 	void SetIsActive(bool mIsActive) { m_bIsActive = mIsActive; };
 

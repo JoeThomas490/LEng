@@ -20,6 +20,15 @@ void TestState::Update(float dTime)
 	{
 		testObj->Update(dTime);
 		testObj->setPosition(testObj->getPosition().x + (50.0f * dTime), testObj->getPosition().y);
+
+		if (LInputManager::IsMouseButtonPressed(Mouse::Button::Left))
+		{
+			printf("\nLeft mouse btn pressed!");
+		}
+		if (LInputManager::IsMouseButtonReleased(Mouse::Button::Left))
+		{
+			printf("\nLeft mouse btn released!");
+		}
 	}
 }
 

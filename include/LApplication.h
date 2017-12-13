@@ -6,6 +6,7 @@
 #include <SFML\System.hpp>
 
 #include "Utils\constants.h"
+#include "Input\LInputManager.h"
 
 #include "States\TestState.h"
 

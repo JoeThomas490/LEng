@@ -5,11 +5,15 @@
 
 LApplication::LApplication()
 {
+	printf("%s", "Engine running... \n");
+	printf("%s", "******************\n");
 }
 
 
 LApplication::~LApplication()
 {
+	printf("%s", "Engine stopping... \n");
+	printf("%s", "******************\n");
 }
 
 void LApplication::InitApplication(const LApplicationInitData & data)
@@ -35,6 +39,8 @@ void LApplication::RunApplication()
 
 		m_dTime = mClock.restart().asSeconds();
 
+		LInputManager::Update();
+
 		//Poll events
 		Event evt;
 		while (m_pRenderWindow->pollEvent(evt))
@@ -42,6 +48,10 @@ void LApplication::RunApplication()
 			if (evt.type == Event::Closed)
 			{
 				m_pRenderWindow->close();
+			}
+			else
+			{
+				LInputManager::HandleEvents(evt);
 			}
 		}
 
@@ -51,13 +61,11 @@ void LApplication::RunApplication()
 	}
 }
 
+
 void LApplication::ClearApplication()
 {
-	delete m_pRenderer;
-	m_pRenderer = nullptr;
-
-	delete m_pRenderWindow;
-	m_pRenderWindow = nullptr;
+	LFREE(m_pRenderer);
+	LFREE(m_pRenderWindow);
 }
 
 RenderWindow * LApplication::GetRenderWindow()

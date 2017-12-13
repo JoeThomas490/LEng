@@ -4,8 +4,13 @@
 
 LSplashState::LSplashState()
 {
+
 }
 
+LSplashState::~LSplashState()
+{
+
+}
 void LSplashState::InitState()
 {
 	if (!m_fontSplash.loadFromFile("res/fonts/data-control.ttf"))
@@ -27,19 +32,11 @@ void LSplashState::InitState()
 
 void LSplashState::Update(float dTime)
 {
-	static float mAliveTime = 0;
-	mAliveTime += dTime;
+	m_fAliveTime += dTime;
 
-	static Vector2f scale(1, 1);
+	UpdateSplashText(dTime);
 
-	scale.x += 0.5f * dTime;
-	scale.y += 0.5f * dTime;
-
-	m_txtSplash.setScale(scale);
-
-	m_txtSplash.setPosition(LengConstants::WINDOW_WIDTH / 2 - (m_txtSplash.getGlobalBounds().width / 2), LengConstants::WINDOW_HEIGHT / 2 - (m_txtSplash.getGlobalBounds().width / 2));
-
-	if (mAliveTime > m_fAliveTime)
+	if (m_fAliveTime > m_fDeathTime)
 	{
 		FinishState();
 	}
@@ -50,7 +47,22 @@ void LSplashState::ShutdownState()
 	LApplication::GetApplicationInstance()->GetRenderer()->RemoveFromQueue(&m_txtSplash);
 }
 
-
-LSplashState::~LSplashState()
+void LSplashState::UpdateSplashText(float dTime)
 {
+	static Vector2f scale(1, 1);
+
+	scale.x += 0.5f * dTime;
+	scale.y += 0.5f * dTime;
+
+	m_txtSplash.setScale(scale);
+	m_txtSplash.setPosition(LengConstants::WINDOW_WIDTH / 2 - (m_txtSplash.getGlobalBounds().width / 2), LengConstants::WINDOW_HEIGHT / 2 - (m_txtSplash.getGlobalBounds().width / 2));
+
+	float t = m_fAliveTime / m_fDeathTime;
+
+	float r = Lerp(Color::White.r, Color::Black.r, t);
+	float g = Lerp(Color::White.g, Color::Black.g, t);
+	float b = Lerp(Color::White.b, Color::Black.b, t);
+
+	m_txtSplash.setColor(Color(r,g,b));
+
 }

@@ -7,6 +7,8 @@
 #include "Rendering\LRenderer.h"
 #include "GameObject\LGameObject.h"
 
+#include "Utils\LMathsUtils.h"
+
 class LSplashState : public LState
 {
 public:
@@ -23,7 +25,10 @@ public:
 
 private:
 
-	float m_fAliveTime = 1.5f;
+	void UpdateSplashText(float dTime);
+
+	float m_fDeathTime = 3.0f;
+	float m_fAliveTime = 0.0f;
 
 	Font m_fontSplash;
 	Text m_txtSplash;

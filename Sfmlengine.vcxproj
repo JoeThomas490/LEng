@@ -38,6 +38,7 @@
     <ClInclude Include="include\Input\LInputManager.h" />
     <ClInclude Include="include\Utils\LMacros.h" />
     <ClInclude Include="include\States\LSplashState.h" />
+    <ClInclude Include="include\Utils\LMathsUtils.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{26068E86-B443-47BE-831C-05BD4F5EE065}</ProjectGuid>

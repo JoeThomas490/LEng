@@ -47,8 +47,12 @@ public:
 	void InitApplication(const LApplicationInitData& data);
 
 	void RunApplication();
-
 	void ClearApplication();
+
+	void AddState(LState* mState);
+	void ChangeState(LState* mState);
+	void ChangeState(int mStateIndex);
+
 
 	RenderWindow* GetRenderWindow();
 	LRenderer* GetRenderer();
@@ -61,6 +65,9 @@ private:
 	LRenderer* m_pRenderer;	
 
 	LState* m_pCurrentState;
+
+	typedef vector<LState*> StateList;
+	StateList m_vStateList;
 
 	float m_dTime;
 };

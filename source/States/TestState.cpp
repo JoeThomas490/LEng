@@ -56,10 +56,15 @@ void TestState::Update(float dTime)
 
 void TestState::ShutdownState()
 {
+	LRenderer* renderer = LApplication::GetApplicationInstance()->GetRenderer();
+	for (int i = 0; i < m_iMaxObjects; i++)
+	{
+		renderer->RemoveFromQueue(&testObjs[i]);
+	}
+
 	delete[] testObjs;
 }
 
 TestState::~TestState()
 {
-	ShutdownState();
 }

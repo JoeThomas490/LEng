@@ -9,6 +9,8 @@
 
 #include "Utils\LMathsUtils.h"
 
+class LInvadersPlayer;
+
 class LInvadersGameState : public LState
 {
 public:
@@ -27,8 +29,7 @@ private:
 	void CreatePlayer();
 
 private:
-	LGameObject* m_pPlayer;
-	float m_fMoveSpeed;
+	LInvadersPlayer* m_pPlayer;
 
 };
 

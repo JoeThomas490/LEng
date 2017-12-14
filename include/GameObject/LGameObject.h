@@ -16,9 +16,12 @@ enum LPrimitive
 class LGameObject : public Drawable, public Transformable
 {
 public:
+
 	LGameObject(Vector2f mPos = Vector2f(0,0), Vector2f mSize = Vector2f(0,0));
 	LGameObject(LPrimitive mPrimitiveType, Vector2f mPos = Vector2f(0,0), Vector2f mSize = Vector2f(5,5));
 	~LGameObject();
+
+	void CreatePrimitive(LPrimitive mPrimtiveType, const Vector2f& mSize = Vector2f(5, 5));
 
 	void draw(RenderTarget& rTarget, RenderStates rStates) const;
 	virtual void Update(float dTime);
@@ -38,9 +41,11 @@ private:
 
 	void UpdateGlobalBounds();
 
+protected:
+	VertexArray m_vertexArray;
+
 private:
 
-	VertexArray m_vertexArray;
 	Texture* m_pTexture = nullptr;
 
 	FloatRect m_frGlobalBounds;

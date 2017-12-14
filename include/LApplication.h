@@ -10,7 +10,7 @@
 
 #include "States\TestState.h"
 #include "States\LSplashState.h"
-#include "Invaders\LInvadersGameState.h"
+#include "Invaders\States\LInvadersGameState.h"
 
 using namespace sf;
 using namespace std;

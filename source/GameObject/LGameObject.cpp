@@ -14,6 +14,12 @@ LGameObject::LGameObject(LPrimitive mPrimitiveType, Vector2f mPos, Vector2f mSiz
 	m_v2Size = mSize;
 }
 
+void LGameObject::CreatePrimitive(LPrimitive mPrimtiveType, const Vector2f& mSize)
+{
+	InitVertexArray(mPrimtiveType, Vector2f(0, 0), mSize);
+	m_v2Size = mSize;
+}
+
 void LGameObject::draw(sf::RenderTarget & renderTarget, sf::RenderStates renderStates) const
 {
 	if (m_bIsActive)
@@ -27,7 +33,6 @@ void LGameObject::draw(sf::RenderTarget & renderTarget, sf::RenderStates renderS
 
 void LGameObject::Update(float dTime)
 {
-	//UpdateGlobalBounds();
 }
 
 void LGameObject::SetSize(const Vector2f& mSize)
@@ -95,3 +100,5 @@ LGameObject::~LGameObject()
 {
 	m_vertexArray.clear();
 }
+
+

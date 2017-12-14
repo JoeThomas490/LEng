@@ -5,12 +5,20 @@
 
 namespace LengConstants
 {
-	const int WINDOW_WIDTH = 800;
-	const int WINDOW_HEIGHT = 600;
+	const int WINDOW_WIDTH = 600;
+	const int WINDOW_HEIGHT = 800;
 
 	const int MS_PER_UPDATE = 10.0f;
 
 	const int SPLASH_TIME = 1.0f;
+
+	namespace LInvaders
+	{
+		const int MAX_BULLETS = 30;
+		const float BULLET_SPEED = 400.0f;
+		
+		const float PLAYER_SPEED = 250.0f;
+	}
 }
 
 #endif

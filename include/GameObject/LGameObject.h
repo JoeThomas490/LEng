@@ -29,6 +29,8 @@ public:
 	void SetSize(const Vector2f& mSize);
 	Vector2f GetSize() { return m_v2Size; };
 
+	void SetColor(Color mColor);
+
 	bool GetIsActive() { return m_bIsActive; };
 	void SetIsActive(bool mIsActive) { m_bIsActive = mIsActive; };
 

@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="source\Invaders\Entities\LInvadersBullet.cpp" />
     <ClCompile Include="source\Invaders\Entities\LInvadersPlayer.cpp" />
     <ClCompile Include="source\Invaders\States\LInvadersGameState.cpp" />
     <ClCompile Include="source\States\LSplashState.cpp" />
@@ -31,6 +32,7 @@
     <ClCompile Include="source\States\TestState.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\Invaders\Entities\LInvadersBullet.h" />
     <ClInclude Include="include\Utils\constants.h" />
     <ClInclude Include="include\LApplication.h" />
     <ClInclude Include="include\GameObject\LGameObject.h" />

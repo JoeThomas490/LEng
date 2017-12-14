@@ -2,6 +2,7 @@
 #define _LINVADERS_PLAYER_H_
 
 #include "GameObject\LGameObject.h"
+#include "Invaders\Entities\LInvadersBullet.h"
 
 #include "LApplication.h"
 
@@ -16,8 +17,14 @@ public:
 
 private:
 
+	void HandleBullets(float dTime);
+
+private:
+
 	float m_fMoveSpeed;
 
+	LInvadersBullet m_aBullets[LengConstants::LInvaders::MAX_BULLETS];
+	int m_iBulletIndx;
 };
 
 #endif

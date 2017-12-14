@@ -41,6 +41,17 @@ void LGameObject::SetSize(const Vector2f& mSize)
 	m_v2Size = mSize;
 }
 
+void LGameObject::SetColor(Color mColor)
+{
+	for (int i = 0; i < m_vertexArray.getVertexCount(); i++)
+	{
+		m_vertexArray[i].color = mColor;
+		{
+
+		};
+	}
+}
+
 bool LGameObject::IsCollisionBetween(LGameObject * obj1, LGameObject * obj2)
 {
 	if (obj1->GetIsActive() && obj2->GetIsActive())

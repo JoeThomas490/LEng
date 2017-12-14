@@ -64,6 +64,11 @@ void LApplication::RunApplication()
 			}
 		}
 
+		if (LInputManager::IsKeyPressed(Keyboard::Key::R))
+		{
+			ChangeState(m_pCurrentState);
+		}
+
 		m_pCurrentState->Update(m_dTime);
 
 		if (m_pCurrentState->GetIsStateFinished())

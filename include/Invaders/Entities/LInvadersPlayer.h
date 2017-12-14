@@ -16,15 +16,9 @@ public:
 	virtual void Update(float dTime) override;
 
 private:
-
-	void HandleBullets(float dTime);
-
 private:
 
 	float m_fMoveSpeed;
-
-	LInvadersBullet m_aBullets[LengConstants::LInvaders::MAX_BULLETS];
-	int m_iBulletIndx;
 };
 
 #endif

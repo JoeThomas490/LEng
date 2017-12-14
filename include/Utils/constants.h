@@ -16,8 +16,13 @@ namespace LengConstants
 	{
 		const int MAX_BULLETS = 30;
 		const float BULLET_SPEED = 400.0f;
-		
+
+		const int MAX_ENEMIES = 30;
+		const int ENEMIES_PER_ROW = 10;
+
 		const float PLAYER_SPEED = 250.0f;
+
+		
 	}
 }
 

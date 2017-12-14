@@ -48,6 +48,9 @@
     <ClCompile Include="source\Invaders\Entities\LInvadersBullet.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="source\Invaders\Entities\LInvadersEnemy.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\LApplication.h">
@@ -87,6 +90,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\Invaders\Entities\LInvadersBullet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Invaders\Entities\LInvadersEnemy.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

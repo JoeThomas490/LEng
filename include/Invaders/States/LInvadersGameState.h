@@ -38,8 +38,6 @@ private:
 
 	LInvadersBullet* m_pBullets;
 	int m_iBulletIndx = 0;
-
-	Texture m_textureShip;
 };
 
 #endif

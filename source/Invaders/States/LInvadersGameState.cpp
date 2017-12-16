@@ -96,7 +96,6 @@ void LInvadersGameState::CreateEnemies()
 		if (counter % LengConstants::LInvaders::ENEMIES_PER_ROW == 0)
 			row++;
 
-		pEnemy->SetTexture(&m_textureShip);
 
 		LApplication::GetApplicationInstance()->GetRenderer()->AddToQueue(pEnemy);
 	}

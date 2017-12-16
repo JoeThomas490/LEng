@@ -38,6 +38,8 @@ private:
 
 	LInvadersBullet* m_pBullets;
 	int m_iBulletIndx = 0;
+
+	int m_iEnemysKilled = 0;
 };
 
 #endif

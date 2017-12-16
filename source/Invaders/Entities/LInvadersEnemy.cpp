@@ -11,7 +11,6 @@ LInvadersEnemy::~LInvadersEnemy()
 void LInvadersEnemy::InitEnemy()
 {
 	CreatePrimitive(LPrimitive::LSQUARE, Vector2f(35, 35));
-
 	SetTexture(LTextureManager::GetTextureManagerInstance().LoadTexture("res/sprites/enemy.png"));
 }
 

@@ -13,6 +13,9 @@ void LInvadersGameState::InitState()
 	CreatePlayer();
 	CreateEnemies();
 	CreateBullets();
+
+	m_iBulletIndx = 0;
+	m_iEnemysKilled = 0;
 }
 
 void LInvadersGameState::Update(float dTime)
@@ -33,11 +36,18 @@ void LInvadersGameState::Update(float dTime)
 					{
 						m_pEnemies[j].SetIsActive(false);
 						m_pBullets[i].SetIsActive(false);
+
+						m_iEnemysKilled++;
 					}
 				}
 			}
 
 		}
+	}
+
+	if (m_iEnemysKilled >= LengConstants::LInvaders::MAX_ENEMIES)
+	{
+		LApplication::GetApplicationInstance()->ChangeState(0);
 	}
 }
 

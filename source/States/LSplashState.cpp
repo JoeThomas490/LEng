@@ -14,6 +14,9 @@ LSplashState::~LSplashState()
 void LSplashState::InitState()
 {
 	m_fDeathTime = LengConstants::SPLASH_TIME;
+	m_fAliveTime = 0;
+
+	m_bStateFinished = false;
 
 	if (!m_fontSplash.loadFromFile("res/fonts/data-control.ttf"))
 	{

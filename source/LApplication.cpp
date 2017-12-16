@@ -115,7 +115,7 @@ void LApplication::ChangeState(LState* mState)
 
 void LApplication::ChangeState(int mStateIndex)
 {
-	if (mStateIndex > 0 && mStateIndex < m_vStateList.size())
+	if (mStateIndex >= 0 && mStateIndex < m_vStateList.size())
 	{
 		printf("\nChanging to State No. %i", mStateIndex);
 

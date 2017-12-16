@@ -6,7 +6,7 @@
 using namespace sf;
 using namespace std;
 
-typedef std::vector<sf::Texture> LTextureList;
+typedef std::vector<sf::Texture*> LTextureList;
 typedef std::map<std::string, int> LTextureLookup;
 typedef std::map<std::string, int>::iterator LTextureLookupIterator;
 

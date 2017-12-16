@@ -11,12 +11,13 @@ LInvadersBullet::~LInvadersBullet()
 
 void LInvadersBullet::InitBullet()
 {
-	CreatePrimitive(LPrimitive::LSQUARE, Vector2f(5, 15));
-	SetColor(Color::Red);
+	CreatePrimitive(LPrimitive::LSQUARE, Vector2f(10, 30));
 
 	m_fMoveSpeed = LengConstants::LInvaders::BULLET_SPEED;
 
 	SetIsActive(false);
+
+	SetTexture(LTextureManager::GetTextureManagerInstance().LoadTexture("res/sprites/bullet.png"));
 
 	LApplication::GetApplicationInstance()->GetRenderer()->AddToQueue(this);
 }

@@ -7,6 +7,10 @@ LTextureManager::LTextureManager()
 
 LTextureManager::~LTextureManager()
 {
+	for (auto& texture : m_textureList)
+	{
+		delete texture;
+	}
 }
 
 Texture * LTextureManager::LoadTexture(const string & mPath)
@@ -16,12 +20,12 @@ Texture * LTextureManager::LoadTexture(const string & mPath)
 	LTextureLookupIterator it = m_textureLookup.find(mPath);
 	if (it != m_textureLookup.end())
 	{
-		return &m_textureList[it->second];
+		return m_textureList[it->second];
 	}
 
-	Texture t;
+	Texture* t = new Texture();
 
-	if(!t.loadFromFile(mPath))
+	if(!t->loadFromFile(mPath))
 	{
 		printf("WARNING : File couldn't be loaded! Path : %s", mPath);
 		return nullptr;
@@ -31,7 +35,7 @@ Texture * LTextureManager::LoadTexture(const string & mPath)
 		m_textureList.push_back(t);
 		m_textureLookup.emplace(mPath, m_textureList.size() - 1);
 
-		return &m_textureList[m_textureList.size() - 1];
+		return m_textureList[m_textureList.size() - 1];
 	}
 }
 
@@ -40,7 +44,7 @@ Texture * LTextureManager::GetTextureFromTag(const string & mTag)
 	LTextureLookupIterator it = m_textureLookup.find(mTag);
 	if (it != m_textureLookup.end())
 	{
-		return &m_textureList[it->second];
+		return m_textureList[it->second];
 	}
 
 	printf("WARNING : File couldn't be loaded! Path : %s", mTag);

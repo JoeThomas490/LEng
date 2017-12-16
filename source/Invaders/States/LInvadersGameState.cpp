@@ -61,6 +61,12 @@ void LInvadersGameState::CreatePlayer()
 	m_pPlayer = new LInvadersPlayer();
 	LApplication::GetApplicationInstance()->GetRenderer()->AddToQueue(m_pPlayer);
 
+	if (m_textureShip.loadFromFile("res/sprites/ship.png"))
+	{
+		//m_textureShip.setSmooth(true)
+		m_pPlayer->SetTexture(&m_textureShip);
+	}
+
 }
 
 void LInvadersGameState::CreateEnemies()
@@ -96,6 +102,8 @@ void LInvadersGameState::CreateEnemies()
 		counter++;
 		if (counter % LengConstants::LInvaders::ENEMIES_PER_ROW == 0)
 			row++;
+
+		pEnemy->SetTexture(&m_textureShip);
 
 		LApplication::GetApplicationInstance()->GetRenderer()->AddToQueue(pEnemy);
 	}

@@ -21,6 +21,8 @@ public:
 
 private :
 
+	void SortRenderLayers();
+
 	bool IsInQueue(Drawable* mObj);
 	void ClearQueue();
 

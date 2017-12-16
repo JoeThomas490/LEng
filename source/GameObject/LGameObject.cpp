@@ -14,6 +14,11 @@ LGameObject::LGameObject(LPrimitive mPrimitiveType, Vector2f mPos, Vector2f mSiz
 	m_v2Size = mSize;
 }
 
+LGameObject::~LGameObject()
+{
+	m_vertexArray.clear();
+}
+
 void LGameObject::CreatePrimitive(LPrimitive mPrimtiveType, const Vector2f& mSize)
 {
 	InitVertexArray(mPrimtiveType, Vector2f(0, 0), mSize);
@@ -41,14 +46,21 @@ void LGameObject::SetSize(const Vector2f& mSize)
 	m_v2Size = mSize;
 }
 
+void LGameObject::SetTexture(Texture * pTexture)
+{
+	if (!pTexture)
+	{
+		return;
+	}
+	m_pTexture = pTexture;
+	m_irTextureRect = IntRect(0, 0, m_pTexture->getSize().x, m_pTexture->getSize().y);
+}
+
 void LGameObject::SetColor(Color mColor)
 {
 	for (int i = 0; i < m_vertexArray.getVertexCount(); i++)
 	{
 		m_vertexArray[i].color = mColor;
-		{
-
-		};
 	}
 }
 
@@ -103,13 +115,6 @@ void LGameObject::UpdateGlobalBounds()
 	m_frGlobalBounds.width = m_v2Size.x;
 	m_frGlobalBounds.height = m_v2Size.y;
 
-}
-
-
-
-LGameObject::~LGameObject()
-{
-	m_vertexArray.clear();
 }
 
 

@@ -13,7 +13,10 @@ LRenderer::~LRenderer()
 
 void LRenderer::AddToQueue(Drawable* mObj)
 {
-	m_renderQueue.push_back(mObj);
+	if (!IsInQueue(mObj))
+	{
+		m_renderQueue.push_back(mObj);
+	}
 }
 
 void LRenderer::RemoveFromQueue(Drawable* mObj)
@@ -34,6 +37,14 @@ void LRenderer::RemoveFromQueue(Drawable* mObj)
 
 	m_renderQueue.erase(m_renderQueue.begin() + i);
 
+}
+
+void LRenderer::SortRenderLayers()
+{
+	//sort(m_renderQueue.begin(), m_renderQueue.end(), [](Drawable* objA, Drawable* objB)
+	//{
+	//	return objA->GetRenderLayer() < objB->GetRenderLayer();
+	//});
 }
 
 bool LRenderer::IsInQueue(Drawable* mObj)

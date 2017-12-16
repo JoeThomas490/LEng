@@ -29,6 +29,11 @@ public:
 	void SetSize(const Vector2f& mSize);
 	Vector2f GetSize() { return m_v2Size; };
 
+	void SetTexture(Texture* pTexture);
+
+	void SetRenderLayer(int mLayer) { m_iRenderLayer = mLayer; };
+	int GetRenderLayer() { return m_iRenderLayer; };
+
 	void SetColor(Color mColor);
 
 	bool GetIsActive() { return m_bIsActive; };
@@ -51,8 +56,11 @@ private:
 	Texture* m_pTexture = nullptr;
 
 	FloatRect m_frGlobalBounds;
+	IntRect m_irTextureRect;
 
 	bool m_bIsActive = false;
+
+	int m_iRenderLayer = 0;
 
 	Vector2f m_v2Size;
 };

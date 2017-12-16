@@ -8,6 +8,8 @@
 #include "Utils\constants.h"
 #include "Input\LInputManager.h"
 
+#include "Managers\LTextureManager.h"
+
 #include "States\TestState.h"
 #include "States\LSplashState.h"
 #include "Invaders\States\LInvadersGameState.h"

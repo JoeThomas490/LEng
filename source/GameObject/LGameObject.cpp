@@ -53,7 +53,11 @@ void LGameObject::SetTexture(Texture * pTexture)
 		return;
 	}
 	m_pTexture = pTexture;
-	m_irTextureRect = IntRect(0, 0, m_pTexture->getSize().x, m_pTexture->getSize().y);
+
+	m_vertexArray[0].texCoords = Vector2f(0, 0);
+	m_vertexArray[1].texCoords = Vector2f(m_pTexture->getSize().x, 0);
+	m_vertexArray[2].texCoords = Vector2f(m_pTexture->getSize().x, m_pTexture->getSize().y);
+	m_vertexArray[3].texCoords = Vector2f(0, m_pTexture->getSize().y);
 }
 
 void LGameObject::SetColor(Color mColor)

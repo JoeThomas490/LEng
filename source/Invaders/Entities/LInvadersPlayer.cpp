@@ -2,13 +2,14 @@
 
 LInvadersPlayer::LInvadersPlayer()
 {
-	LGameObject::LGameObject(LPrimitive::LSQUARE, Vector2f(0, 0), Vector2f(100, 100));
 
-	CreatePrimitive(LPrimitive::LSQUARE, Vector2f(100, 100));
+	CreatePrimitive(LPrimitive::LSQUARE, Vector2f(50, 50));
 
 	setPosition(Vector2f(LengConstants::WINDOW_WIDTH / 2 - (GetSize().x / 2), LengConstants::WINDOW_HEIGHT * 0.85f - (GetSize().y / 2)));
 
 	m_fMoveSpeed = LengConstants::LInvaders::PLAYER_SPEED;
+
+	SetTexture(LTextureManager::GetTextureManagerInstance().LoadTexture("res/sprites/ship.png"));
 }
 
 

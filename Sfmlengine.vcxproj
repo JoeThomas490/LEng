@@ -23,6 +23,7 @@
     <ClCompile Include="source\Invaders\Entities\LInvadersBullet.cpp" />
     <ClCompile Include="source\Invaders\Entities\LInvadersPlayer.cpp" />
     <ClCompile Include="source\Invaders\States\LInvadersGameState.cpp" />
+    <ClCompile Include="source\Managers\LTextureManager.cpp" />
     <ClCompile Include="source\States\LSplashState.cpp" />
     <ClCompile Include="source\Input\LInputManager.cpp" />
     <ClCompile Include="source\Main.cpp" />
@@ -35,6 +36,7 @@
   <ItemGroup>
     <ClInclude Include="include\Invaders\Entities\LInvadersBullet.h" />
     <ClInclude Include="include\Invaders\Entities\LInvadersEnemy.h" />
+    <ClInclude Include="include\Managers\LTextureManager.h" />
     <ClInclude Include="include\Utils\constants.h" />
     <ClInclude Include="include\LApplication.h" />
     <ClInclude Include="include\GameObject\LGameObject.h" />

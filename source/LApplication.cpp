@@ -1,5 +1,7 @@
 #include "LApplication.h"
+
 #include "Rendering\LRenderer.h"
+
 #include "States\LState.h"
 
 
@@ -20,7 +22,7 @@ void LApplication::InitApplication(const LApplicationInitData & data)
 {
 	m_pRenderWindow = new RenderWindow(VideoMode(data.windowWidth, data.windowHeight), data.appName);
 	m_pRenderer = new LRenderer();
-
+	
 	LInputManager::SetWindow(m_pRenderWindow);
 }
 
@@ -137,6 +139,9 @@ void LApplication::ChangeState(int mStateIndex)
 
 void LApplication::ClearApplication()
 {
+
+	delete &LTextureManager::GetTextureManagerInstance();
+
 	LFREE(m_pRenderer);
 	LFREE(m_pRenderWindow);
 }

@@ -4,6 +4,8 @@
 #include "GameObject\LGameObject.h"
 #include "Invaders\Entities\LInvadersBullet.h"
 
+#include "Managers\LTextureManager.h"
+
 #include "LApplication.h"
 
 class LInvadersPlayer :
